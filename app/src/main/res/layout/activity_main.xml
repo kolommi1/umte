@@ -23,4 +23,10 @@
             android:text="Hello Wor!"
     />
 
+    <Button
+            android:id="@+id/openButton"
+            android:text="Open Detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 </LinearLayout>
