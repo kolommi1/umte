@@ -1,4 +1,4 @@
-package cz.uhk.myapplication
+package cz.uhk.umte
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("cz.uhk.myapplication", appContext.packageName)
+        assertEquals("cz.uhk.umte", appContext.packageName)
     }
 }

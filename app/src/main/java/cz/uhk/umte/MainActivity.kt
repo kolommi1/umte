@@ -1,4 +1,4 @@
-package cz.uhk.myapplication
+package cz.uhk.umte
 
 import android.app.Activity
 import android.content.Intent
@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,DetailActivity::class.java)
             intent.putExtra("key","text")
             startActivityForResult(intent,777)
+        }
+
+        openListButton.setOnClickListener{
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
         }
     }
 

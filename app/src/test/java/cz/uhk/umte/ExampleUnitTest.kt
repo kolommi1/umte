@@ -1,4 +1,4 @@
-package cz.uhk.myapplication
+package cz.uhk.umte
 
 import org.junit.Test
 
