@@ -3,6 +3,7 @@
           package="cz.uhk.umte">
 
     <application
+            android:name=".UmteApp"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -19,6 +20,7 @@
 
         <activity android:name="cz.uhk.umte.DetailActivity"/>
         <activity android:name="cz.uhk.umte.ListActivity"/>
+        <activity android:name="cz.uhk.umte.UserDetailActivity"/>
     </application>
 
 </manifest>

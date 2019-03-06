@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center">
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Jméno: "/>
+    <EditText android:id="@+id/nameEditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:hint="Jméno"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Příjmení: "/>
+    <EditText android:id="@+id/lastNameEditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:hint="Příjmení"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Věk: "/>
+    <EditText android:id="@+id/ageEditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:hint="Věk"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Váha: "/>
+    <EditText android:id="@+id/weightEditText"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:hint="Váha"/>
+
+    <Button android:id="@+id/saveButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Uložit"/>
+
+</LinearLayout>

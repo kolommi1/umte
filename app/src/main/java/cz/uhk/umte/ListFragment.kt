@@ -1,5 +1,6 @@
 package cz.uhk.umte
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import cz.uhk.umte.Model.User
+import cz.uhk.umte.model.User
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListFragment : Fragment() {
@@ -28,7 +29,7 @@ class ListFragment : Fragment() {
 
 
         editTextButton.setOnClickListener {
-            val user = User(editText.text.toString())
+            val user = User(editText.text.toString(), "Přijmení", 52, 95.6f)
             editText.setText("")
             list.add(user)
             adapter.notifyDataSetChanged()
@@ -56,7 +57,9 @@ class ListFragment : Fragment() {
             }
 
             override fun onClick(v: View?) {
-                // otevřít detail uživatele todo
+                val intent = Intent(context, UserDetailActivity::class.java)
+                intent.putExtra("user", list[layoutPosition] )
+                startActivity(intent)
             }
 
             fun onBind(){

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import cz.uhk.umte.prefs.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
         }
+
+        val appStartMillis = Prefs.getAppStart()
+        Toast.makeText(this, "$appStartMillis", Toast.LENGTH_LONG).show()
+        Prefs.setAppStart(System.currentTimeMillis())
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
