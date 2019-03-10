@@ -1,5 +1,6 @@
 package cz.uhk.umte
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -36,6 +37,16 @@ class ListFragment : Fragment() {
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 111 && resultCode == Activity.RESULT_OK){
+            val user = data?.getSerializableExtra("user")
+            val index = data!!.getIntExtra("index",0)
+            list[index] = user as User
+            recyclerView.adapter?.notifyDataSetChanged()
+        }
+    }
+
     inner class Adapter : RecyclerView.Adapter<Adapter.Holder>(){
 
         override fun onCreateViewHolder(root: ViewGroup, p1: Int): Holder {
@@ -59,7 +70,8 @@ class ListFragment : Fragment() {
             override fun onClick(v: View?) {
                 val intent = Intent(context, UserDetailActivity::class.java)
                 intent.putExtra("user", list[layoutPosition] )
-                startActivity(intent)
+                intent.putExtra("index", layoutPosition )
+                startActivityForResult(intent,111)
             }
 
             fun onBind(){

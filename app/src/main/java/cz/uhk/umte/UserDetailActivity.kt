@@ -1,5 +1,6 @@
 package cz.uhk.umte
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -17,6 +18,8 @@ class UserDetailActivity : AppCompatActivity()  {
         setContentView(R.layout.activity_user_detail)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val index = intent.getIntExtra("index",0)
         var user = intent.extras?.getSerializable("user") as User
 
         nameEditText.setText(user.name)
@@ -25,12 +28,13 @@ class UserDetailActivity : AppCompatActivity()  {
         weightEditText.setText(user.weight.toString())
 
         saveButton.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)
+            val intent = Intent()
             user = User(nameEditText.text.toString(), lastNameEditText.text.toString(),
                 ageEditText.text.toString().toInt(), weightEditText.text.toString().toFloat())
 
             intent.putExtra("user",  user)
-            startActivity(intent)
+            intent.putExtra("index",  index)
+            setResult(Activity.RESULT_OK,intent)
             finish()
         }
 
