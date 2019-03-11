@@ -5,8 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import cz.uhk.umte.model.User
-import kotlinx.android.synthetic.main.activity_detail.*
+import cz.uhk.umte.model.UserDB
 import kotlinx.android.synthetic.main.activity_user_detail.*
 
 
@@ -20,7 +19,7 @@ class UserDetailActivity : AppCompatActivity()  {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val index = intent.getIntExtra("index",0)
-        var user = intent.extras?.getSerializable("user") as User
+        val user = intent.extras?.getSerializable("user") as UserDB
 
         nameEditText.setText(user.name)
         lastNameEditText.setText(user.lastName)
@@ -29,8 +28,10 @@ class UserDetailActivity : AppCompatActivity()  {
 
         saveButton.setOnClickListener {
             val intent = Intent()
-            user = User(nameEditText.text.toString(), lastNameEditText.text.toString(),
-                ageEditText.text.toString().toInt(), weightEditText.text.toString().toFloat())
+            user.name = nameEditText.text.toString()
+            user.lastName = lastNameEditText.text.toString()
+            user.age = ageEditText.text.toString().toInt()
+            user.weight = weightEditText.text.toString().toFloat()
 
             intent.putExtra("user",  user)
             intent.putExtra("index",  index)
