@@ -12,16 +12,14 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-    />
+            android:text="Hello World!"/>
 
     <TextView
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello Wor!"
-    />
+            android:text="Hello Wor!"/>
 
     <Button
             android:id="@+id/openButton"
@@ -30,8 +28,14 @@
             android:layout_height="wrap_content"/>
 
     <Button
-            android:id="@+id/openListButton"
-            android:text="Open List"
+        android:id="@+id/openListButton"
+        android:text="Open List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/wsButton"
+            android:text="Webové služby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
