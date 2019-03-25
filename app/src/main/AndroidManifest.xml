@@ -23,6 +23,7 @@
         <activity android:name="cz.uhk.umte.DetailActivity"/>
         <activity android:name="cz.uhk.umte.ListActivity"/>
         <activity android:name="cz.uhk.umte.UserDetailActivity"/>
+        <service android:name=".services.RoomService" />
     </application>
 
 </manifest>

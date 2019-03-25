@@ -21,4 +21,13 @@ interface StagService {
 
     @GET("kalendar/getHarmonogramRoku")
     fun getHarmonogram(@Query("outputFormat") format: String): Call<ScheduleDTO>
+
+    @GET("rozvrhy/getRozvrhByMistnost")
+    fun getTimetable(
+        @Query("budova") building: String,
+        @Query("mistnost") room: String,
+        @Query("datumOd") dateFrom: String,
+        @Query("datumDo") dateTo: String,
+        @Query("outputFormat") format: String
+    ) : Call<TimetableDTO>
 }

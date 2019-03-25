@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import cz.uhk.umte.prefs.Prefs
+import cz.uhk.umte.services.RoomService
 import cz.uhk.umte.ws.ScheduleDTO
 import cz.uhk.umte.ws.StagService
 import cz.uhk.umte.ws.stagService
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                     println("onFailure")
                 }
             })
+            startService(
+                Intent(this@MainActivity, RoomService::class.java)
+            )
+
         }
     }
 
