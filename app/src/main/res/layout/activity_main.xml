@@ -39,5 +39,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+    <Button
+            android:id="@+id/sensorButton"
+            android:text="Sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

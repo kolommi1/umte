@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import cz.uhk.umte.prefs.Prefs
+import cz.uhk.umte.sensors.SensorActivity
 import cz.uhk.umte.services.RoomService
 import cz.uhk.umte.ws.ScheduleDTO
 import cz.uhk.umte.ws.StagService
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         openListButton.setOnClickListener {
             val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
+        }
+
+        sensorButton.setOnClickListener {
+            val intent = Intent(this, SensorActivity::class.java)
             startActivity(intent)
         }
 
